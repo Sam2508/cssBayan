@@ -1,0 +1,247 @@
+/*FONTS*/
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap");
+
+/**********************/
+:root {
+  --base-font: 'Roboto', sans-serif;
+
+  box-sizing: border-box;
+  font-size: calc(0.5vw + 0.4em);
+}
+html,
+body {
+  height: 100%;
+}
+img.opener {
+  height: 3rem;
+  width: 3rem;
+  display: none;
+  transform: rotate(0deg);
+
+  transition-property: transform;
+  transition-duration: 0.9s;
+}
+img.icon {
+  height: 2.5rem;
+  width: 2.5rem;
+}
+h2 {
+  font-size: 2.8rem;
+}
+
+/* MAIN */
+body {
+  background-color: #125c77;
+  color: rgb(203, 203, 218);
+  font-family: var(--base-font);
+  overflow-y: hidden;
+}
+.external-wrapper{
+  height: 100%;
+  border-radius: 0.5rem;
+  max-width: 50%;
+  margin: 1rem auto;
+  display: flex;
+  flex-direction: column;
+}
+main {
+  overflow-y: scroll;
+}
+
+header.main-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  height: 8rem;
+  font-family: var(--base-font);
+  background-color: #082732;
+  font-size: 4rem;
+  color: #dbcbb6;
+}
+header.main-header h1 {
+  filter: drop-shadow(6px 6px 20px rgb(86, 212, 221));
+}
+article.mem {
+  margin: 0rem 0rem;
+}
+label:active {
+  filter: contrast(120%);
+}
+article header.mem-header {
+  padding: 0.3rem 1rem;
+  border-top: 0.05rem solid #082732;
+  border-bottom: 0.05rem solid #082732;
+}
+article header.mem-header{
+  display: flex;
+  align-items: center;
+}
+article header.mem-header img {
+  margin-left: auto;
+}
+article figure {
+  width: 0;
+  height: 0;
+  margin: 0 auto;
+  padding-top: 1rem;
+
+  transition-property: width, height;
+  transition-duration: 0.5s, 0.5s;
+}
+
+article input {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 0;
+  width: 0;
+}
+article input:checked ~ label > figure {
+  width: 50%;
+  height: 100%;
+}
+
+article input:checked + label > header > img.opener {
+  transform: rotate(45deg);
+}
+
+footer {
+  flex-shrink: 0;
+  margin-top: 1rem;
+  height: 4rem;
+  font-family: var(--base-font);
+  background-color: #082732;
+  font-size: 4rem;
+  margin-top: auto;
+  margin-bottom: 0.5em;
+}
+footer address {
+  height: 100%;
+}
+footer ul {
+  display: flex;
+  margin: 0 auto;
+  justify-content: space-around;
+  width: 60%;
+  height: 100%;
+}
+footer ul a {
+  display: flex;
+  height: 100%;
+  align-items: center;
+}
+footer ul a img {
+  filter: drop-shadow(6px 6px 20px rgb(86, 212, 221)) invert(75%);;
+}
+
+/*MEDIA*/
+@media screen and (min-width: 821px) and (max-width: 1920px) {
+  img.icon:hover {
+    filter: drop-shadow(6px 6px 20px red) invert(25%);
+  }
+  .external-wrapper:hover {
+    cursor: pointer;
+  }
+  .external-wrapper:hover > main > article > label > header > img.opener {
+    display: block;
+  }
+  label:hover {
+    color: var(--base-color);
+  }
+  label:hover > figure {
+    width: 50%;
+    height: 100%;
+  }
+  article header.mem-header img:hover {
+    filter: drop-shadow(6px 6px 20px red) invert(75%);
+  }
+}
+
+@media screen and (min-width: 321px) and (max-width: 820px) {
+  html,
+  body {
+    height: 100%;
+    overflow-y: none;
+  }
+
+  header.main-header {
+    height: 11rem;
+  }
+  h2 {
+    font-size: 3rem;
+    padding: 0.5rem;
+  }
+
+  .external-wrapper {
+    border-radius: 0.5rem;
+    max-width: 90%;
+    height: 100%;
+    margin: 1rem auto;
+    display: flex;
+    flex-direction: column;
+  }
+
+  main {
+    overflow-y: scroll;
+  }
+
+  footer {
+    margin-top: auto;
+    margin-bottom: 0.5em;
+  }
+
+  article input:checked ~ label > figure {
+    width: 70%;
+    height: 100%;
+  }
+
+  img.opener {
+    display: block;
+  }
+  img.icon {
+    filter: drop-shadow(6px 6px 20px red) invert(75%);
+  }
+}
+
+@media screen and (max-width: 320px) {
+  html,
+  body {
+    height: 100%;
+    overflow-y: none;
+  }
+
+  h2 {
+    font-size: 2.2rem;
+    padding: 0.7rem;
+  }
+
+  .external-wrapper {
+    border-radius: 0.5rem;
+    max-width: 90%;
+    height: 100%;
+    margin: 1rem auto;
+    display: flex;
+    flex-direction: column;
+  }
+
+  main {
+    overflow-y: scroll;
+  }
+
+  footer {
+    margin-top: auto;
+    margin-bottom: 0.5em;
+  }
+
+  article input:checked ~ label > figure {
+    width: 80%;
+    height: 100%;
+  }
+
+  img.opener {
+    display: block;
+  }
+  img.icon {
+    filter: drop-shadow(6px 6px 20px red) invert(75%);
+  }
+}
